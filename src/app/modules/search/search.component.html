@@ -1,3 +1,20 @@
-<p>
-  search works!
-</p>
+<div id="search">
+    <form id="search-form" (ngSubmit)="onSearch(query.value)"  #searchForm="ngForm">
+        <div id="search-input-container">
+            <input
+                type="text"
+                name="search"
+                id="search-input"
+                [(ngModel)]="searchQuery"
+                #query="ngModel"
+                placeholder="Search Github repos..."
+                required/>
+        </div>
+    </form>
+
+    <hr/>
+
+    <div id="search-results" *ngFor="let repo of repos | async">
+        <span> {{repo.name}} </span>
+    </div>
+</div>
