@@ -14,7 +14,7 @@
 
     <hr/>
 
-    <div id="search-results" *ngFor="let repo of repos | async">
-        <span> {{repo.name}} </span>
-    </div>
+    <app-search-results
+        [repos]="repos | async">
+    </app-search-results>
 </div>
